@@ -169,6 +169,7 @@ body::after{
 }
 .leaderboard .name{font-weight:650}
 .leaderboard .pts{font-variant-numeric: tabular-nums; color: rgba(255,254,242,.9)}
+.leaderboard .name{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .card{
   background: var(--card);
   border:1px solid var(--border);
