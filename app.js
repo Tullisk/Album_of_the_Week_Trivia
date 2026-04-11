@@ -468,8 +468,8 @@ const el = {
 };
 
 // ---------- Audio ----------
-const correctDing = new Audio("Assets/Sounds/correct_ding.mp3");
-const incorrectSound = new Audio("Assets/Sounds/incorrect.mp3");
+const correctDing = new Audio("Assets/Sounds/correct_soundeffect.mp3");
+const incorrectSound = new Audio("Assets/Sounds/incorrect_soundeffect.mp3");
 
 function playCorrectDing() {
   try {
@@ -510,11 +510,6 @@ function getScorePercent(score, maxScore) {
 
 function formatPercent(p) {
   return `${Math.round(p)}%`;
-}
-
-function formatScoreDisplay() {
-  const pct = formatPercent(getScorePercent(state.score, state.maxScore));
-  return `${pct} (${state.score} pt${state.score === 1 ? "" : "s"})`;
 }
 
 function normalizeDifficulty(v) {
@@ -658,7 +653,7 @@ function renderQuestion() {
   el.difficultyText.textContent = q.difficulty[0].toUpperCase() + q.difficulty.slice(1);
   const pts = DIFFICULTY_POINTS[q.difficulty] || 1;
   el.pointsText.textContent = `${pts} pt${pts === 1 ? "" : "s"}`;
-  el.scoreText.textContent = formatScoreDisplay();
+  el.scoreText.textContent = formatPercent(getScorePercent(state.score, state.maxScore));
 
   el.questionText.textContent = q.question;
 
@@ -759,7 +754,7 @@ function handleSubmit(e) {
     playIncorrectSound();
   }
 
-  el.scoreText.textContent = formatScoreDisplay();
+  el.scoreText.textContent = formatPercent(getScorePercent(state.score, state.maxScore));
 
   el.feedback.classList.remove("hidden");
   el.feedback.classList.toggle("ok", correct);

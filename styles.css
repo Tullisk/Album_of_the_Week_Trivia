@@ -1,12 +1,14 @@
 :root{
-  /* Approx. pixel-sampled from the provided logo */
-  --bg:#430b14;         /* deeper reddish */
-  --card:#28104a;       /* dark purple panel */
-  --text:#f6e7c0;       /* cream */
-  --muted:#e6d6ad;      /* softer cream */
-  --accent:#f6e7c0;     /* cream accent (per selection) */
-  --accent2:#12061f;    /* near-black outline */
-  --border:#000000;
+  --primary:#843a3a;    /* maroon */
+  --accent:#fffef2;     /* cream */
+  --text:#232323;       /* grey (default text) */
+  --field:#316f9f;      /* blue */
+
+  --bg: var(--text);
+  --card: var(--primary);
+  --muted: rgba(35,35,35,.85);
+  --accent2: rgba(255,254,242,.55);
+  --border: rgba(255,254,242,.55);
   --danger:#ff6b6b;
   --ok:#42d392;
 }
@@ -14,16 +16,81 @@
 body{
   margin:0;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-  background:
-    radial-gradient(900px 520px at 14% 14%, rgba(246,231,192,.14), transparent 60%),
-    radial-gradient(900px 520px at 88% 18%, rgba(18,6,31,.20), transparent 55%),
-    var(--bg);
+  background: var(--bg);
   color:var(--text);
 }
+
+/* Continuously scrolling background (left -> right) */
+body::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+
+  /* 3-image strip, duplicated to avoid gaps */
+  background-image:
+    url("Assets/Graphics/demo_banner2.webp"),
+    url("Assets/Graphics/girlwithheadphones.jpg"),
+    url("Assets/Graphics/ipodcommercial.jpg"),
+    url("Assets/Graphics/demo_banner2.webp"),
+    url("Assets/Graphics/girlwithheadphones.jpg"),
+    url("Assets/Graphics/ipodcommercial.jpg");
+  background-repeat: no-repeat;
+  background-size:
+    33.333vw 100vh,
+    33.333vw 100vh,
+    33.333vw 100vh,
+    33.333vw 100vh,
+    33.333vw 100vh,
+    33.333vw 100vh;
+  background-position:
+    -100vw 50%,
+    -66.667vw 50%,
+    -33.333vw 50%,
+    0vw 50%,
+    33.333vw 50%,
+    66.667vw 50%;
+
+  animation: bg-marquee 120s linear infinite;
+  filter: saturate(1.05) contrast(1.05);
+}
+
+/* Overlay to keep content readable */
+body::after{
+  content:"";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(900px 520px at 14% 14%, rgba(255,254,242,.08), transparent 60%),
+    radial-gradient(900px 520px at 88% 18%, rgba(35,35,35,.38), transparent 55%),
+    rgba(35,35,35,.78);
+}
+
+@keyframes bg-marquee{
+  0%{
+    background-position:
+      -100vw 50%,
+      -66.667vw 50%,
+      -33.333vw 50%,
+      0vw 50%,
+      33.333vw 50%,
+      66.667vw 50%;
+  }
+  100%{
+    background-position:
+      0vw 50%,
+      33.333vw 50%,
+      66.667vw 50%,
+      100vw 50%,
+      133.333vw 50%,
+      166.667vw 50%;
+  }
+}
 .banner{
-  height: 180px;
+  height: 216px;
   width: 100%;
-  background-image: url("Assets/Graphics/demo_banner2.webp");
+  background-image: url("Assets/Graphics/tamu_aotw_banner_large.png");
   background-size: cover;
   background-position: center;
   border-bottom: 1px solid var(--border);
@@ -40,18 +107,78 @@ body{
   background: rgba(255,255,255,.02);
 }
 .brand{display:flex;gap:16px;align-items:center;padding:10px 0}
-.logo{height:72px;width:auto;display:block;filter: drop-shadow(0 10px 18px rgba(0,0,0,.35))}
-.container{max-width:920px;margin:28px auto;padding:0 16px}
+.logo{height:120px;width:auto;display:block;border:2px solid var(--accent);border-radius:12px;filter: drop-shadow(0 10px 18px rgba(0,0,0,.35))}
+.container{max-width:1180px;margin:28px auto;padding:0 16px}
+.layout{
+  display:grid;
+  grid-template-columns: 260px 1fr;
+  gap: 16px;
+  align-items:start;
+}
+.maincol{min-width:0}
+
+/* Keep the primary panels at the original width */
+.layout .maincol{max-width:920px}
+
+@media (max-width: 980px){
+  .layout{grid-template-columns: 220px 1fr}
+}
+@media (max-width: 860px){
+  .layout{grid-template-columns: 1fr}
+  .sidebar{order: 2}
+}
+
+.sidebar{
+  position: sticky;
+  top: 16px;
+  align-self:start;
+  padding: 14px;
+  margin-left: -32px;
+}
+
+/* Leaderboard panel background */
+.card.sidebar{background: var(--text)}
+.sidebar-title{margin:0 0 12px 0}
+.leaderboard{
+  margin:0;
+  padding-left: 26px;
+  list-style: decimal;
+  counter-reset: lb;
+}
+.leaderboard li{
+  list-style: none;
+  counter-increment: lb;
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:10px;
+  padding:8px 10px;
+  margin: 0 0 8px 0;
+  border:1px solid rgba(255,254,242,.28);
+  border-radius:12px;
+  background: rgba(255,255,255,.03);
+  color: var(--accent);
+}
+.leaderboard li::before{
+  content: counter(lb) ".";
+  width: 2.2ch;
+  margin-right: 10px;
+  color: rgba(255,254,242,.9);
+  font-weight: 800;
+  flex: 0 0 auto;
+}
+.leaderboard .name{font-weight:650}
+.leaderboard .pts{font-variant-numeric: tabular-nums; color: rgba(255,254,242,.9)}
 .card{
-  background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+  background: var(--card);
   border:1px solid var(--border);
   border-radius:16px;
   padding:18px;
   box-shadow: 0 10px 30px rgba(0,0,0,.35);
   margin:16px 0;
 }
-h1{margin:10px 0 8px 0}
-h2{margin:0 0 10px 0}
+h1{margin:10px 0 8px 0; color: var(--accent); font-size: 3rem}
+h2{margin:0 0 10px 0; color: var(--accent)}
 .muted{color:var(--muted)}
 .hidden{display:none}
 
@@ -65,11 +192,11 @@ input,select{
   padding:12px;
   border-radius:12px;
   border:1px solid var(--border);
-  background:#1a0832;
-  color:var(--text);
+  background: var(--accent);
+  color: var(--text);
   outline:none;
 }
-input:focus,select:focus{border-color: rgba(246,231,192,.75)}
+input:focus,select:focus{border-color: var(--accent); box-shadow: 0 0 0 3px rgba(255,254,242,.18)}
 
 .row{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:12px}
 
@@ -77,9 +204,9 @@ input:focus,select:focus{border-color: rgba(246,231,192,.75)}
   display:inline-block;
   padding:12px 14px;
   border-radius:12px;
-  border:1px solid rgba(246,231,192,.55);
-  background: linear-gradient(180deg, rgba(246,231,192,.18), rgba(18,6,31,.20));
-  color:var(--text);
+  border:1px solid var(--accent2);
+  background: linear-gradient(180deg, rgba(255,254,242,.22), rgba(35,35,35,.10));
+  color: var(--accent);
   cursor:pointer;
   text-decoration:none;
   font-weight:650;
@@ -87,8 +214,8 @@ input:focus,select:focus{border-color: rgba(246,231,192,.75)}
 .btn:hover{filter:brightness(1.08)}
 .btn:disabled{opacity:.55;cursor:not-allowed}
 .btn-secondary{
-  border-color: rgba(246,231,192,.28);
-  background: rgba(246,231,192,.06);
+  border-color: rgba(255,254,242,.28);
+  background: rgba(255,254,242,.08);
 }
 
 .topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
