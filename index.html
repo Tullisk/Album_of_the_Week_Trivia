@@ -7,11 +7,21 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <nav class="nav" aria-label="Primary">
+    <div class="container nav-inner">
+      <a class="nav-brand" href="index.html">Album Trivia</a>
+      <div class="nav-links" role="list">
+        <a class="nav-link is-active" href="index.html" aria-current="page">This Week's Album</a>
+        <a class="nav-link" href="previous-albums.html">Previous Albums</a>
+        <a class="nav-link" href="dev.html">Dev</a>
+      </div>
+    </div>
+  </nav>
+
   <div class="banner" role="img" aria-label="Album of the Week banner"></div>
   <header class="header">
     <div class="container">
       <div class="brand">
-        <img class="logo" src="Assets/Graphics/tamu_aotw_logo_inv_sq.png" alt="Album of the Week" />
         <div>
           <h1>Album Trivia</h1>
         </div>
@@ -44,30 +54,27 @@
 
     <div class="maincol">
     <section class="card">
-      <h2>Game Setup</h2>
+      <h2>This Week's Album</h2>
 
       <div class="grid">
-        <label class="field">
-          <span>Album (optional)</span>
-          <select id="albumInput">
-            <option value="1989">1989 — Taylor Swift</option>
-            <option value="DAMN.">DAMN. — Kendrick Lamar</option>
-            <option value="Random Access Memories">Random Access Memories — Daft Punk</option>
-          </select>
-          <small class="muted">Choose an album to play that quiz, or leave on <strong>All albums</strong>.</small>
-        </label>
-
-        <label class="field">
-          <span>Questions source</span>
-          <select id="sourceSelect">
-            <option value="demo">Demo (built-in)</option>
-            <option value="sheet">Google Sheet (published)</option>
-          </select>
-          <small class="muted">For Sheet mode, set URL in <code>app.js</code>.</small>
-        </label>
+        <div class="field">
+          <div class="albumCard">
+            <img class="albumCover" src="Assets/Graphics/1989_cover.webp" alt="1989 album cover" />
+            <div>
+              <div class="albumTitle">1989</div>
+              <div class="albumArtist muted">Taylor Swift</div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <p class="muted">Each game includes a mix of difficulties (mostly easy, some medium, a few hard). Points: Easy 1, Medium 2, Hard 3.</p>
+      <!-- Keep required inputs for app.js, but lock them down to a single playable album. -->
+      <select id="albumInput" class="hidden" aria-hidden="true" tabindex="-1">
+        <option value="1989" selected>1989 — Taylor Swift</option>
+      </select>
+      <select id="sourceSelect" class="hidden" aria-hidden="true" tabindex="-1">
+        <option value="demo" selected>Demo (built-in)</option>
+      </select>
 
       <div class="row">
         <button id="startBtn" class="btn" type="button">Start</button>

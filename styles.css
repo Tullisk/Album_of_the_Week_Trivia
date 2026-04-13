@@ -6,7 +6,7 @@
 
   --bg: var(--text);
   --card: var(--primary);
-  --muted: rgba(35,35,35,.85);
+  --muted: #000;
   --accent2: rgba(255,254,242,.55);
   --border: rgba(255,254,242,.55);
   --danger:#ff6b6b;
@@ -18,6 +18,46 @@ body{
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
   background: var(--bg);
   color:var(--text);
+}
+
+/* Allow extra scroll room at the bottom of pages */
+body{padding-bottom: 160px}
+
+/* Top navigation */
+.nav{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid var(--border);
+  background: rgba(35,35,35,.78);
+  backdrop-filter: blur(10px);
+}
+.nav .container{margin:0 auto}
+.nav-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding: 10px 16px;
+}
+.nav-brand{
+  color: var(--accent);
+  text-decoration:none;
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+.nav-links{display:flex;gap:10px;align-items:center}
+.nav-link{
+  color: rgba(255,254,242,.92);
+  text-decoration:none;
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: rgba(255,254,242,.06);
+}
+.nav-link:hover{filter:brightness(1.08)}
+.nav-link.is-active{
+  background: rgba(255,254,242,.14);
+  border-color: rgba(255,254,242,.26);
 }
 
 /* Continuously scrolling background (left -> right) */
@@ -88,7 +128,7 @@ body::after{
   }
 }
 .banner{
-  height: 216px;
+  height: 320px;
   width: 100%;
   background-image: url("Assets/Graphics/tamu_aotw_banner_large.png");
   background-size: cover;
@@ -179,6 +219,14 @@ body::after{
   box-shadow: 0 10px 30px rgba(0,0,0,.35);
   margin:16px 0;
 }
+.card.card-grey{background: var(--text)}
+
+/* Grey card variant: make only the outer card text readable (do not affect nested panels) */
+.card.card-grey{color: var(--accent)}
+.card.card-grey > h1,
+.card.card-grey > h2,
+.card.card-grey > h3{color: var(--accent)}
+.card.card-grey > .muted{color: rgba(255,254,242,.82)}
 h1{margin:10px 0 8px 0; color: var(--accent); font-size: 3rem}
 h2{margin:0 0 10px 0; color: var(--accent)}
 .muted{color:var(--muted)}
@@ -189,6 +237,32 @@ h2{margin:0 0 10px 0; color: var(--accent)}
 
 .field span{display:block;color:var(--muted);margin-bottom:6px}
 .field small{display:block;margin-top:6px}
+
+/* Album card (This Week's Album setup) */
+.albumCard{
+  display:flex;
+  gap: 12px;
+  align-items:center;
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.03);
+}
+.albumCover{
+  width: 270px;
+  height: 270px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid rgba(255,254,242,.30);
+  box-shadow: 0 10px 22px rgba(0,0,0,.35);
+}
+.albumTitle{color: var(--accent); font-weight: 900; font-size: 3rem; line-height: 1.05}
+.albumArtist,.albumMeta{line-height: 1.25}
+
+@media (max-width: 560px){
+  .albumCover{width: 210px; height: 210px}
+  .albumTitle{font-size: 2.4rem}
+}
 input,select{
   width:100%;
   padding:12px;
@@ -235,6 +309,7 @@ input:focus,select:focus{border-color: var(--accent); box-shadow: 0 0 0 3px rgba
   background: rgba(255,255,255,.03);
   border-radius:12px;
   cursor:pointer;
+  color: #000;
 }
 .choice input{width:auto;margin:0}
 
@@ -251,3 +326,58 @@ input:focus,select:focus{border-color: var(--accent); box-shadow: 0 0 0 3px rgba
 table{width:100%;border-collapse:collapse;min-width:760px}
 th,td{border:1px solid var(--border);padding:10px;text-align:left}
 code{color:var(--accent)}
+
+/* Previous albums page */
+.albumList{
+  display:flex;
+  flex-direction:column;
+  gap: 12px;
+  max-height: 66vh;
+  overflow:auto;
+  padding-right: 6px; /* space for scrollbar */
+}
+.albumPanel{
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--card);
+  overflow:hidden;
+  flex: 0 0 auto;
+}
+.albumPanel.is-selected{
+  background: var(--field);
+  border-color: rgba(255,254,242,.55);
+}
+.albumPanel.is-selected .albumName,
+.albumPanel.is-selected .albumBy{
+  color: var(--accent);
+}
+.albumSummary{
+  list-style: none;
+  display:flex;
+  align-items:center;
+  gap: 14px;
+  padding: 17px;
+  cursor:pointer;
+  user-select:none;
+  min-height: 130px;
+}
+.albumSummary::-webkit-details-marker{display:none}
+.albumPanel:hover{filter:brightness(1.05)}
+.albumPanel[open]{
+  background: var(--card);
+  border-color: rgba(255,254,242,.30);
+}
+.albumThumb{
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid rgba(255,254,242,.26);
+  box-shadow: 0 10px 22px rgba(0,0,0,.35);
+  flex: 0 0 auto;
+}
+.albumInfo{min-width:0}
+.albumName{color: var(--accent); font-weight: 900; font-size: 1.4rem; line-height: 1.15}
+.albumBy{line-height: 1.25}
+/* Panels are selectable, not expandable */
+.albumDetails{display:none}

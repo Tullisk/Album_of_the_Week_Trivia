@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Previous Albums  Album Trivia</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav class="nav" aria-label="Primary">
+    <div class="container nav-inner">
+      <a class="nav-brand" href="index.html">Album Trivia</a>
+      <div class="nav-links" role="list">
+        <a class="nav-link" href="index.html">This Week's Album</a>
+        <a class="nav-link is-active" href="previous-albums.html" aria-current="page">Previous Albums</a>
+        <a class="nav-link" href="dev.html">Dev</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="card card-grey">
+      <h1>Previous Albums</h1>
+      <p class="muted">Browse previous Album of the Week picks. Click an album to play its trivia!</p>
+
+      <div class="albumList" role="list">
+        <details class="albumPanel" role="listitem">
+          <summary class="albumSummary">
+            <img class="albumThumb" src="Assets/Graphics/1989_cover.webp" alt="1989 album cover" />
+            <div class="albumInfo">
+              <div class="albumName">1989</div>
+              <div class="albumBy muted">Taylor Swift</div>
+            </div>
+          </summary>
+          <div class="albumDetails">
+            <div class="muted">Year: 2014</div>
+            <div class="muted">Notes: Add description, track highlights, or a link.</div>
+          </div>
+        </details>
+
+        <details class="albumPanel" role="listitem">
+          <summary class="albumSummary">
+            <img class="albumThumb" src="Assets/Graphics/Album%20covers/Sometimes.jpg" alt="Sometimes I Might Be Introvert album cover" />
+            <div class="albumInfo">
+              <div class="albumName">Sometimes I Might Be Introvert</div>
+              <div class="albumBy muted">Little Simz</div>
+            </div>
+          </summary>
+          <div class="albumDetails">
+            <div class="muted">Year: 2021</div>
+            <div class="muted">Notes: Add description, track highlights, or a link.</div>
+          </div>
+        </details>
+
+        <details class="albumPanel" role="listitem">
+          <summary class="albumSummary">
+            <img class="albumThumb" src="Assets/Graphics/Album%20covers/toxicity.jpg" alt="Toxicity album cover" />
+            <div class="albumInfo">
+              <div class="albumName">Toxicity</div>
+              <div class="albumBy muted">System of a Down</div>
+            </div>
+          </summary>
+          <div class="albumDetails">
+            <div class="muted">Year: 2001</div>
+            <div class="muted">Notes: Add description, track highlights, or a link.</div>
+          </div>
+        </details>
+
+        <details class="albumPanel" role="listitem">
+          <summary class="albumSummary">
+            <img class="albumThumb" src="Assets/Graphics/Album%20covers/theNaturalBridge.jpg" alt="The Natural Bridge album cover" />
+            <div class="albumInfo">
+              <div class="albumName">The Natural Bridge</div>
+              <div class="albumBy muted">Silver Jews</div>
+            </div>
+          </summary>
+          <div class="albumDetails">
+            <div class="muted">Year: 1996</div>
+            <div class="muted">Notes: Add description, track highlights, or a link.</div>
+          </div>
+        </details>
+
+        <details class="albumPanel" role="listitem">
+          <summary class="albumSummary">
+            <img class="albumThumb" src="Assets/Graphics/Album%20covers/DAMN.png" alt="DAMN. album cover" />
+            <div class="albumInfo">
+              <div class="albumName">DAMN.</div>
+              <div class="albumBy muted">Kendrick Lamar</div>
+            </div>
+          </summary>
+          <div class="albumDetails">
+            <div class="muted">Year: 2017</div>
+            <div class="muted">Notes: Add description, track highlights, or a link.</div>
+          </div>
+        </details>
+
+        <details class="albumPanel" role="listitem">
+          <summary class="albumSummary">
+            <img class="albumThumb" src="Assets/Graphics/Album%20covers/randomAccessMemories.jpg" alt="Random Access Memories album cover" />
+            <div class="albumInfo">
+              <div class="albumName">Random Access Memories</div>
+              <div class="albumBy muted">Daft Punk</div>
+            </div>
+          </summary>
+          <div class="albumDetails">
+            <div class="muted">Year: 2013</div>
+            <div class="muted">Notes: Add description, track highlights, or a link.</div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section class="card" aria-label="Album trivia">
+      <h2>Album Trivia</h2>
+      <p class="muted">Select an album above, then press Start.</p>
+
+      <!-- Required inputs for app.js -->
+      <select id="albumInput" class="hidden" aria-hidden="true" tabindex="-1">
+        <option value="1989" selected>1989</option>
+        <option value="Sometimes I Might Be Introvert">Sometimes I Might Be Introvert</option>
+        <option value="Toxicity">Toxicity</option>
+        <option value="The Natural Bridge">The Natural Bridge</option>
+        <option value="DAMN.">DAMN.</option>
+        <option value="Random Access Memories">Random Access Memories</option>
+      </select>
+      <select id="sourceSelect" class="hidden" aria-hidden="true" tabindex="-1">
+        <option value="demo" selected>Demo</option>
+      </select>
+
+      <div class="row">
+        <button id="startBtn" class="btn" type="button">Start</button>
+        <button id="resetBtn" class="btn btn-secondary" type="button">Reset</button>
+      </div>
+    </section>
+
+    <section id="game" class="card hidden" aria-live="polite">
+      <div class="topbar">
+        <div class="muted">
+          <span id="progressText">Question 1 / 1</span>
+          <span class="dot">·</span>
+          <span id="difficultyText">Easy</span>
+          <span class="dot">·</span>
+          <span id="pointsText">1 pt</span>
+        </div>
+        <div class="score">Score: <strong id="scoreText">0</strong></div>
+      </div>
+
+      <h2 id="questionText" class="question">Question goes here</h2>
+
+      <form id="answerForm" class="choices"></form>
+
+      <div id="feedback" class="feedback hidden"></div>
+
+      <div class="row">
+        <button id="submitBtn" class="btn" type="submit" form="answerForm">Submit</button>
+        <button id="nextBtn" class="btn hidden" type="button">Next</button>
+      </div>
+    </section>
+
+    <section id="results" class="card hidden">
+      <h2>Results</h2>
+      <p>You answered <strong id="answeredText">0</strong> questions.</p>
+      <p class="score">Final score: <strong id="finalScoreText">0</strong></p>
+      <button id="playAgainBtn" class="btn" type="button">Play again</button>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+  <script>
+    // Click an album to select it (no expand/collapse). Selection highlights the panel in blue.
+    (function () {
+      const albumSelect = document.getElementById('albumInput');
+      if (!albumSelect) return;
+
+      const panels = Array.from(document.querySelectorAll('.albumPanel'));
+
+      // Prevent any panels from being open (acts like a static card list).
+      panels.forEach(p => p.open = false);
+
+      function selectPanel(panel) {
+        panels.forEach(p => p.classList.toggle('is-selected', p === panel));
+
+        const nameEl = panel.querySelector('.albumName');
+        const albumName = nameEl ? nameEl.textContent.trim() : '';
+        if (!albumName) return;
+
+        const opt = Array.from(albumSelect.options).find(o => o.value === albumName);
+        if (opt) albumSelect.value = opt.value;
+      }
+
+      panels.forEach(panel => {
+        const summary = panel.querySelector('.albumSummary');
+        if (!summary) return;
+
+        summary.addEventListener('click', (e) => {
+          e.preventDefault();
+          panel.open = false;
+          selectPanel(panel);
+        });
+      });
+
+      // Default selected = first panel.
+      if (panels[0]) selectPanel(panels[0]);
+    })();
+  </script>
+</body>
+</html>

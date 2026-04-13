@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dev  Album Trivia</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav class="nav" aria-label="Primary">
+    <div class="container nav-inner">
+      <a class="nav-brand" href="index.html">Album Trivia</a>
+      <div class="nav-links" role="list">
+        <a class="nav-link" href="index.html">This Week's Album</a>
+        <a class="nav-link" href="previous-albums.html">Previous Albums</a>
+        <a class="nav-link is-active" href="dev.html" aria-current="page">Dev</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <div class="layout">
+      <aside class="card sidebar" aria-label="This week's Leaderboard">
+        <h2 class="sidebar-title">This week's Leaderboard</h2>
+        <button class="btn btn-secondary sidebar-login" type="button">Login</button>
+        <ol class="leaderboard" aria-label="Leaderboard list">
+          <li><span class="name">MaroonMix</span><span class="pts">100</span></li>
+          <li><span class="name">VinylViking</span><span class="pts">98</span></li>
+          <li><span class="name">BeatSch</span><span class="pts">97</span></li>
+          <li><span class="name">AggieGrooves</span><span class="pts">95</span></li>
+          <li><span class="name">TempoTamu</span><span class="pts">93</span></li>
+          <li><span class="name">ChordCruz</span><span class="pts">91</span></li>
+          <li><span class="name">HeadHero</span><span class="pts">90</span></li>
+          <li><span class="name">PlayPilot</span><span class="pts">88</span></li>
+          <li><span class="name">CampusDJ</span><span class="pts">86</span></li>
+          <li><span class="name">RetroRef</span><span class="pts">84</span></li>
+          <li><span class="name">BassBuddy</span><span class="pts">81</span></li>
+          <li><span class="name">HarmonyHub</span><span class="pts">78</span></li>
+          <li><span class="name">SonicSprout</span><span class="pts">72</span></li>
+          <li><span class="name">TuneTac</span><span class="pts">63</span></li>
+          <li><span class="name">LilacList</span><span class="pts">55</span></li>
+        </ol>
+      </aside>
+
+      <div class="maincol">
+    <section class="card">
+      <h2>Game Setup</h2>
+
+      <div class="grid">
+        <label class="field">
+          <span>Album (optional)</span>
+          <select id="albumInput">
+            <option value="1989">1989  Taylor Swift</option>
+            <option value="DAMN.">DAMN.  Kendrick Lamar</option>
+            <option value="Random Access Memories">Random Access Memories  Daft Punk</option>
+          </select>
+          <small class="muted">Choose an album to play that quiz, or leave on <strong>All albums</strong>.</small>
+        </label>
+
+        <label class="field">
+          <span>Questions source</span>
+          <select id="sourceSelect">
+            <option value="demo">Demo (built-in)</option>
+            <option value="sheet">Google Sheet (published)</option>
+          </select>
+          <small class="muted">For Sheet mode, set URL in <code>app.js</code>.</small>
+        </label>
+      </div>
+
+      <p class="muted">Each game includes a mix of difficulties (mostly easy, some medium, a few hard). Points: Easy 1, Medium 2, Hard 3.</p>
+
+      <div class="row">
+        <button id="startBtn" class="btn" type="button">Start</button>
+        <button id="resetBtn" class="btn btn-secondary" type="button">Reset</button>
+      </div>
+    </section>
+
+    <section id="game" class="card hidden" aria-live="polite">
+      <div class="topbar">
+        <div class="muted">
+          <span id="progressText">Question 1 / 1</span>
+          <span class="dot">·</span>
+          <span id="difficultyText">Easy</span>
+          <span class="dot">·</span>
+          <span id="pointsText">1 pt</span>
+        </div>
+        <div class="score">Score: <strong id="scoreText">0</strong></div>
+      </div>
+
+      <h2 id="questionText" class="question">Question goes here</h2>
+
+      <form id="answerForm" class="choices"></form>
+
+      <div id="feedback" class="feedback hidden"></div>
+
+      <div class="row">
+        <button id="submitBtn" class="btn" type="submit" form="answerForm">Submit</button>
+        <button id="nextBtn" class="btn hidden" type="button">Next</button>
+      </div>
+    </section>
+
+    <section id="results" class="card hidden">
+      <h2>Results</h2>
+      <p>You answered <strong id="answeredText">0</strong> questions.</p>
+      <p class="score">Final score: <strong id="finalScoreText">0</strong></p>
+      <button id="playAgainBtn" class="btn" type="button">Play again</button>
+    </section>
+
+      </div>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
