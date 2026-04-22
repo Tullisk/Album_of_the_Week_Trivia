@@ -1,0 +1,134 @@
+[Question]
+Difficulty: easy
+Question: Which Taylor Swift album includes the hit song 'Blank Space'?
+A: Red
+B: 1989
+C: Speak Now
+D: Lover
+Correct: B
+
+[Question]
+Difficulty: easy
+Question: What year was '1989' originally released?
+A: 2012
+B: 2014
+C: 2016
+D: 2019
+Correct: B
+
+[Question]
+Difficulty: medium
+Question: Which track opens the standard edition of '1989'?
+A: Style
+B: Welcome to New York
+C: Out of the Woods
+D: Shake It Off
+Correct: B
+
+[Question]
+Difficulty: medium
+Question: Which song from '1989' includes the lyric 'Players gonna play, play, play, play, play'?
+A: Bad Blood
+B: Shake It Off
+C: Wildest Dreams
+D: New Romantics
+Correct: B
+
+[Question]
+Difficulty: hard
+Question: Which producer is notably associated with the pop sound of several '1989' tracks?
+A: Rick Rubin
+B: Max Martin
+C: T Bone Burnett
+D: Quincy Jones
+Correct: B
+
+[Question]
+Difficulty: hard
+Question: Which of these is a bonus track on the deluxe edition of '1989'?
+A: Clean
+B: Wonderland
+C: I Know Places
+D: All You Had To Do Was Stay
+Correct: B
+
+[Question]
+Difficulty: easy
+Question: Which '1989' single features the line 'Cause baby now we got bad blood'?
+A: Bad Blood
+B: Style
+C: Clean
+D: This Love
+Correct: A
+
+[Question]
+Difficulty: easy
+Question: Which of these songs is on the standard tracklist of '1989'?
+A: Enchanted
+B: Wildest Dreams
+C: All Too Well
+D: Love Story
+Correct: B
+
+[Question]
+Difficulty: easy
+Question: '1989' is best described as primarily which genre shift for Taylor Swift at release?
+A: Jazz
+B: Synth-pop / pop
+C: Heavy metal
+D: Classical
+Correct: B
+
+[Question]
+Difficulty: easy
+Question: Which song title is also a common fashion term?
+A: Style
+B: Clean
+C: How You Get The Girl
+D: I Know Places
+Correct: A
+
+[Question]
+Difficulty: easy
+Question: Which song from '1989' includes the phrase 'Are we out of the woods yet?'
+A: Out of the Woods
+B: New Romantics
+C: This Love
+D: Bad Blood
+Correct: A
+
+[Question]
+Difficulty: easy
+Question: Which city is mentioned in the opening track title 'Welcome to New York'?
+A: Los Angeles
+B: New York
+C: Nashville
+D: Chicago
+Correct: B
+
+[Question]
+Difficulty: medium
+Question: Which track includes the lyric 'You got that James Dean daydream look in your eye'?
+A: Style
+B: All You Had To Do Was Stay
+C: This Love
+D: Clean
+Correct: A
+
+[Question]
+Difficulty: medium
+Question: Which of these tracks appears closest to the end of the standard edition tracklist?
+A: Blank Space
+B: Clean
+C: Welcome to New York
+D: Style
+Correct: B
+
+[Question]
+Difficulty: hard
+Question: Which of these songs is part of the deluxe-edition bonus tracks (not standard edition) of '1989'?
+A: New Romantics
+B: All You Had To Do Was Stay
+C: Style
+D: Blank Space
+Correct: A

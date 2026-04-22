@@ -1,0 +1,90 @@
+[Question]
+Difficulty: medium
+Question: The emotional arc of 'Igor' most closely resembles what kind of story structure?
+A: Falling in love, spiraling conflict, then uneasy acceptance
+B: Rags to riches then retirement
+C: Mystery investigation and big reveal
+D: Training montage and championship win
+Correct: A
+
+
+[Question]
+Difficulty: easy
+Question: In what year was 'Igor' released?
+A: 2017
+B: 2018
+C: 2019
+D: 2020
+Correct: C
+
+[Question]
+Difficulty: easy
+Question: 'NEW MAGIC WAND' is frequently described as having what kind of energy?
+A: Aggressive and intense
+B: Calm lullaby
+C: Traditional country ballad
+D: Jazz standards cover
+Correct: A
+
+[Question]
+Difficulty: medium
+Question: Which song from 'Igor' became one of the album's most popular singles?
+A: GONE, GONE / THANK YOU
+B: PUPPET
+C: EARFQUAKE
+D: ARE WE STILL FRIENDS?
+Correct: C
+
+[Question]
+Difficulty: hard
+Question: 'Igor' won which major award at the 2020 Grammy Awards?
+A: Album of the Year
+B: Best Rap Album
+C: Best New Artist
+D: Best Pop Vocal Album
+Correct: B
+
+[Question]
+Difficulty: medium
+Question: Which collaborator provides distinctive guest vocals on the song 'PUPPET'?
+A: Kanye West
+B: Ariana Grande
+C: Billie Eilish
+D: Bruno Mars
+Correct: A
+
+[Question]
+Difficulty: easy
+Question: Which of these track titles appears on 'Igor'?
+A: GONE GONE / THANK YOU
+B: WILD WEST
+C: BLOOD.
+D: Who Dat Boy
+Correct: A
+
+[Question]
+Difficulty: medium
+Question: Which of these songs is the closing track on the standard edition of 'Igor'?
+A: ARE WE STILL FRIENDS?
+B: I THINK
+C: EARFQUAKE
+D: RUNNING OUT OF TIME
+Correct: A
+
+[Question]
+Difficulty: hard
+Question: 'Igor' debuted at No. 1 on which chart?
+A: Billboard 200
+B: UK Albums Chart
+C: ARIA Albums Chart
+D: Gaon Album Chart
+Correct: A
+
+[Question]
+Difficulty: easy
+Question: 'Igor' is generally categorized under which broad genre?
+A: Hip-hop / rap
+B: Country
+C: Classical
+D: Heavy metal
+Correct: A

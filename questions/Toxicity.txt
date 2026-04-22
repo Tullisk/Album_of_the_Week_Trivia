@@ -1,0 +1,134 @@
+[Question]
+Difficulty: easy
+Question: Which band released the album 'Toxicity'?
+A: System of a Down
+B: Linkin Park
+C: Deftones
+D: Tool
+Correct: A
+
+[Question]
+Difficulty: easy
+Question: In what year was 'Toxicity' released?
+A: 1999
+B: 2001
+C: 2003
+D: 2005
+Correct: B
+
+[Question]
+Difficulty: easy
+Question: Which of these is a song from 'Toxicity'?
+A: Chop Suey!
+B: Enter Sandman
+C: Creep
+D: Wonderwall
+Correct: A
+
+[Question]
+Difficulty: easy
+Question: Which track shares the same name as the album?
+A: Toxicity
+B: Aerials
+C: Prison Song
+D: Needles
+Correct: A
+
+[Question]
+Difficulty: easy
+Question: 'Toxicity' is most commonly categorized as which genre?
+A: Alternative metal
+B: Country
+C: EDM
+D: Reggae
+Correct: A
+
+[Question]
+Difficulty: easy
+Question: Which of these songs appears on 'Toxicity'?
+A: Aerials
+B: Yellow
+C: Rolling in the Deep
+D: Bad Blood
+Correct: A
+
+[Question]
+Difficulty: easy
+Question: Which song title from the album includes the word 'Song'?
+A: Prison Song
+B: Science
+C: Forest
+D: Arto
+Correct: A
+
+[Question]
+Difficulty: easy
+Question: Which of these is a track on the album?
+A: Needles
+B: Numb
+C: Paranoid
+D: Hey Jude
+Correct: A
+
+[Question]
+Difficulty: easy
+Question: The album's cover features an altered version of what symbol?
+A: Hollywood sign
+B: Liberty Bell
+C: Golden Gate Bridge
+D: Eiffel Tower
+Correct: A
+
+[Question]
+Difficulty: medium
+Question: Which song from the album became a major hit and is titled like a cooking instruction?
+A: Chop Suey!
+B: Fry Curry
+C: Bake Slowly
+D: Stir It
+Correct: A
+
+[Question]
+Difficulty: medium
+Question: Which track is a short instrumental closing the standard edition of the album?
+A: Arto
+B: Science
+C: ATWA
+D: Deer Dance
+Correct: A
+
+[Question]
+Difficulty: medium
+Question: Which track title is an acronym on the album?
+A: ATWA
+B: DNA.
+C: RAM
+D: SIMBI
+Correct: A
+
+[Question]
+Difficulty: medium
+Question: Which song title from 'Toxicity' includes the word 'Dance'?
+A: Deer Dance
+B: Last Dance
+C: Dance Floor
+D: Slow Dance
+Correct: A
+
+[Question]
+Difficulty: hard
+Question: Who is the lead vocalist most associated with System of a Down?
+A: Serj Tankian
+B: Chino Moreno
+C: Corey Taylor
+D: Maynard James Keenan
+Correct: A
+
+[Question]
+Difficulty: hard
+Question: 'Toxicity' is the ___ studio album by System of a Down.
+A: first
+B: second
+C: third
+D: fourth
+Correct: B

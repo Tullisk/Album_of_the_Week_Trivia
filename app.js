@@ -39,8 +39,74 @@ const SHEET_JSON_URL = (SHEET_ID)
   ? `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(SHEET_NAME)}`
   : "";
 
+// Local TXT questions
+// -------------------
+// This supports static hosting by fetching text files from /questions.
+// Example: /questions/Igor.txt
+const QUESTIONS_TXT_BASE = "questions";
+
 // Demo questions: Taylor Swift album is "1989" (user wrote 1986).
 const DEMO_QUESTIONS = [
+  // ==================================
+  // Demo quiz: Tyler, The Creator — Igor
+  // (Hip-hop / neo-soul, 2019)
+  // ==================================
+  {
+    id: "igor-1",
+    album: "Igor",
+    difficulty: "easy",
+    question: "Who is the primary artist behind the album 'Igor'?",
+    choice_a: "Tyler, The Creator",
+    choice_b: "Frank Ocean",
+    choice_c: "Kanye West",
+    choice_d: "Childish Gambino",
+    correct: "Tyler, The Creator",
+  },
+  {
+    id: "igor-2",
+    album: "Igor",
+    difficulty: "easy",
+    question: "In what year was 'Igor' released?",
+    choice_a: "2017",
+    choice_b: "2018",
+    choice_c: "2019",
+    choice_d: "2020",
+    correct: "2019",
+  },
+  {
+    id: "igor-3",
+    album: "Igor",
+    difficulty: "medium",
+    question: "Which track is the opener of the album 'Igor'?",
+    choice_a: "EARFQUAKE",
+    choice_b: "IGOR'S THEME",
+    choice_c: "I THINK",
+    choice_d: "NEW MAGIC WAND",
+    correct: "IGOR'S THEME",
+  },
+  {
+    id: "igor-4",
+    album: "Igor",
+    difficulty: "medium",
+    question: "Which song from 'Igor' became one of the album's most popular singles?",
+    choice_a: "GONE, GONE / THANK YOU",
+    choice_b: "PUPPET",
+    choice_c: "EARFQUAKE",
+    choice_d: "ARE WE STILL FRIENDS?",
+    correct: "EARFQUAKE",
+  },
+  {
+    id: "igor-5",
+    album: "Igor",
+    difficulty: "hard",
+    question: "'Igor' won which major award at the 2020 Grammy Awards?",
+    choice_a: "Album of the Year",
+    choice_b: "Best Rap Album",
+    choice_c: "Best New Artist",
+    choice_d: "Best Pop Vocal Album",
+    correct: "Best Rap Album",
+  },
+
   {
     id: "1989-1",
     album: "1989",
@@ -974,8 +1040,18 @@ const el = {
 
   answeredText: document.getElementById("answeredText"),
   finalScoreText: document.getElementById("finalScoreText"),
+  scorePieFill: document.getElementById("scorePieFill"),
+  pointsEarnedText: document.getElementById("pointsEarnedText"),
+  pointsPossibleText: document.getElementById("pointsPossibleText"),
   playAgainBtn: document.getElementById("playAgainBtn"),
 };
+
+function setScorePie(percent) {
+  // percent is 0-100.
+  if (!el.scorePieFill) return;
+  const p = Math.max(0, Math.min(100, Number(percent) || 0));
+  el.scorePieFill.setAttribute("stroke-dasharray", `${p} ${100 - p}`);
+}
 
 // ---------- Audio ----------
 const correctDing = new Audio("Assets/Sounds/correct_soundeffect.mp3");
@@ -1051,6 +1127,26 @@ function recordToQuestion(r) {
   };
 }
 
+function shuffleAnswers(q) {
+  // Returns a new question object with choices shuffled and correct updated to the new choice string.
+  const origChoices = (q.choices || []).slice();
+  const origCorrect = String(q.correct || "");
+
+  // Build list of {text, i} to preserve identity during shuffle.
+  const items = origChoices.map((text, i) => ({ text, i }));
+  shuffle(items);
+
+  const newChoices = items.map(x => x.text);
+  const correctItem = items.find(x => x.text === origCorrect);
+  const newCorrect = correctItem ? correctItem.text : origCorrect;
+
+  return {
+    ...q,
+    choices: newChoices,
+    correct: newCorrect,
+  };
+}
+
 function filterQuestions(all, album) {
   const albumNorm = (album || "").trim().toLowerCase();
   let qs = all;
@@ -1083,6 +1179,107 @@ function filterQuestions(all, album) {
 
   // Still nothing? Return qs.
   return picked.length ? shuffle(picked) : qs;
+}
+
+function albumToTxtFileName(album) {
+  // Keep it simple: use the album name directly.
+  // If you need special mapping later, do it here.
+  // Special case: file systems don't like trailing dots (e.g., "DAMN.").
+  const safe = String(album || "").trim().replace(/[.\s]+$/g, "");
+  return `${safe}.txt`;
+}
+
+function parseQuestionsTxt(text, albumName) {
+  const lines = String(text || "")
+    .replaceAll("\r\n", "\n")
+    .replaceAll("\r", "\n")
+    .split("\n");
+
+  const blocks = [];
+  let cur = null;
+  const flush = () => {
+    if (!cur) return;
+    blocks.push(cur);
+    cur = null;
+  };
+
+  const startNew = () => {
+    flush();
+    cur = {
+      difficulty: "easy",
+      question: "",
+      A: "",
+      B: "",
+      C: "",
+      D: "",
+      correctLetter: "",
+    };
+  };
+
+  for (const rawLine of lines) {
+    const line = rawLine.trim();
+    if (!line) continue;
+
+    if (/^\[question\]$/i.test(line)) {
+      startNew();
+      continue;
+    }
+
+    // If file starts without [Question], implicitly start.
+    if (!cur) startNew();
+
+    const m = line.match(/^([A-D]|Difficulty|Question|Correct)\s*:\s*(.*)$/i);
+    if (!m) continue;
+
+    const key = m[1].toLowerCase();
+    const val = (m[2] || "").trim();
+
+    if (key === "difficulty") cur.difficulty = normalizeDifficulty(val);
+    else if (key === "question") cur.question = val;
+    else if (key === "correct") cur.correctLetter = val.toUpperCase();
+    else if (key === "a") cur.A = val;
+    else if (key === "b") cur.B = val;
+    else if (key === "c") cur.C = val;
+    else if (key === "d") cur.D = val;
+  }
+
+  flush();
+
+  const out = [];
+  let i = 0;
+  for (const b of blocks) {
+    const choices = [b.A, b.B, b.C, b.D].map(s => String(s || "").trim());
+    const hasMin = b.question && choices.filter(Boolean).length >= 2;
+    if (!hasMin) continue;
+
+    const letter = (b.correctLetter || "").trim().toUpperCase();
+    const idx = { A: 0, B: 1, C: 2, D: 3 }[letter];
+    const correct = Number.isInteger(idx) ? choices[idx] : "";
+    if (!correct) continue;
+
+    i += 1;
+    out.push({
+      id: `${String(albumName || "album").toLowerCase()}-txt-${i}`,
+      album: albumName,
+      difficulty: normalizeDifficulty(b.difficulty),
+      question: String(b.question).trim(),
+      choice_a: choices[0],
+      choice_b: choices[1],
+      choice_c: choices[2],
+      choice_d: choices[3],
+      correct,
+    });
+  }
+  return out;
+}
+
+async function loadFromLocalTxt(album) {
+  const fileName = albumToTxtFileName(album);
+  const url = `${QUESTIONS_TXT_BASE}/${encodeURIComponent(fileName)}`;
+  const res = await fetch(url, { cache: "no-store" });
+  if (!res.ok) throw new Error(`TXT fetch failed: ${res.status} (${fileName})`);
+  const text = await res.text();
+  return parseQuestionsTxt(text, album);
 }
 
 async function loadFromGoogleSheet() {
@@ -1169,6 +1366,7 @@ function renderQuestion() {
 
   el.answerForm.innerHTML = "";
   q.choices.forEach((choice, i) => {
+    const letter = String.fromCharCode(65 + i); // A-D
     const id = `c_${state.idx}_${i}`;
     const label = document.createElement("label");
     label.className = "choice";
@@ -1181,18 +1379,27 @@ function renderQuestion() {
     input.id = id;
     input.required = true;
 
+    const badge = document.createElement("span");
+    badge.className = "choiceBadge";
+    badge.textContent = letter;
+
     const span = document.createElement("span");
     span.textContent = choice;
 
     label.appendChild(input);
+    label.appendChild(badge);
     label.appendChild(span);
     el.answerForm.appendChild(label);
   });
 }
 
 function endGame() {
+  const pct = getScorePercent(state.score, state.maxScore);
   el.answeredText.textContent = String(state.answered);
-  el.finalScoreText.textContent = formatPercent(getScorePercent(state.score, state.maxScore));
+  el.finalScoreText.textContent = formatPercent(pct);
+  setScorePie(pct);
+  if (el.pointsEarnedText) el.pointsEarnedText.textContent = String(state.score);
+  if (el.pointsPossibleText) el.pointsPossibleText.textContent = String(state.maxScore);
   showResults();
 }
 
@@ -1204,6 +1411,8 @@ async function startGame() {
   try {
     if (source === "sheet") {
       raw = await loadFromGoogleSheet();
+    } else if (source === "txt") {
+      raw = await loadFromLocalTxt(album);
     } else {
       raw = DEMO_QUESTIONS;
     }
@@ -1221,7 +1430,8 @@ async function startGame() {
   }
 
   state = {
-    questions: shuffle(filtered.slice()),
+    // Randomize question order and answer order every new game.
+    questions: shuffle(filtered.slice()).map(shuffleAnswers),
     order: [],
     idx: 0,
     score: 0,
@@ -1250,6 +1460,14 @@ function handleSubmit(e) {
 
   const correct = selected === q.correct;
   const pts = DIFFICULTY_POINTS[q.difficulty] || 1;
+
+  // Gentle flash on the trivia panel to reinforce correctness.
+  // Restart animation reliably by toggling the class and forcing reflow.
+  if (el.game) {
+    el.game.classList.remove("flash-ok", "flash-bad");
+    void el.game.offsetWidth;
+    el.game.classList.add(correct ? "flash-ok" : "flash-bad");
+  }
 
   // Lock choices once answered.
   for (const input of el.answerForm.querySelectorAll('input[type="radio"][name="choice"]')) {

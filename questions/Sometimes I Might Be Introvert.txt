@@ -1,0 +1,134 @@
+[Question]
+Difficulty: easy
+Question: Which artist released the album 'Sometimes I Might Be Introvert'?
+A: Little Simz
+B: Rapsody
+C: Noname
+D: SZA
+Correct: A
+
+[Question]
+Difficulty: easy
+Question: In what year was 'Sometimes I Might Be Introvert' released?
+A: 2019
+B: 2020
+C: 2021
+D: 2022
+Correct: C
+
+[Question]
+Difficulty: easy
+Question: The album title 'Sometimes I Might Be Introvert' is often abbreviated as what?
+A: SIMBI
+B: SIBMI
+C: SMI
+D: Introvert
+Correct: A
+
+[Question]
+Difficulty: easy
+Question: Which of these is a track on the album?
+A: Introvert
+B: The Heart Part 5
+C: Nikes
+D: Runaway
+Correct: A
+
+[Question]
+Difficulty: easy
+Question: Which track title is also the name of a style of dance?
+A: Rollin Stone
+B: Point and Kill
+C: Little Q, Pt. 2
+D: I Love You, I Hate You
+Correct: B
+
+[Question]
+Difficulty: easy
+Question: Little Simz is most commonly associated with which country?
+A: United Kingdom
+B: United States
+C: Canada
+D: Australia
+Correct: A
+
+[Question]
+Difficulty: easy
+Question: The album features the track 'Little Q, Pt. 2'. Which part number is it?
+A: 1
+B: 2
+C: 3
+D: 4
+Correct: B
+
+[Question]
+Difficulty: easy
+Question: Which word appears in the album title?
+A: Introvert
+B: Extrovert
+C: Ambivert
+D: Overt
+Correct: A
+
+[Question]
+Difficulty: medium
+Question: Which track on the album features the artist Obongjayar?
+A: Point and Kill
+B: Two Worlds Apart
+C: Rollin Stone
+D: Standing Ovation
+Correct: A
+
+[Question]
+Difficulty: medium
+Question: Which track title includes the phrase 'I Love You'?
+A: I Love You, I Hate You
+B: I Love You
+C: Love/Hate
+D: Hate to Love
+Correct: A
+
+[Question]
+Difficulty: medium
+Question: Which of these is a track on 'Sometimes I Might Be Introvert'?
+A: Woman
+B: HUMBLE.
+C: Get Lucky
+D: Welcome to New York
+Correct: A
+
+[Question]
+Difficulty: medium
+Question: The album is widely described as blending rap with which broader style of production?
+A: Orchestral / cinematic
+B: Lo-fi black metal
+C: Bluegrass
+D: K-pop
+Correct: A
+
+[Question]
+Difficulty: hard
+Question: Which track name is also a common phrase for someone being misunderstood?
+A: Miss Understood
+B: Misread
+C: Wrong Side
+D: Lost in Translation
+Correct: A
+
+[Question]
+Difficulty: hard
+Question: 'Sometimes I Might Be Introvert' is the ___ studio album by Little Simz.
+A: third
+B: fourth
+C: fifth
+D: sixth
+Correct: B
+
+[Question]
+Difficulty: medium
+Question: Which of these track titles appears on the album?
+A: Rollin Stone
+B: Harder, Better, Faster, Stronger
+C: Bad Blood
+D: Creep
+Correct: A

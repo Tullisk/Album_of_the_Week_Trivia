@@ -1,0 +1,134 @@
+[Question]
+Difficulty: easy
+Question: Which artist released the album 'DAMN.'?
+A: Kendrick Lamar
+B: Drake
+C: J. Cole
+D: Kanye West
+Correct: A
+
+[Question]
+Difficulty: easy
+Question: In what year was 'DAMN.' released?
+A: 2015
+B: 2016
+C: 2017
+D: 2018
+Correct: C
+
+[Question]
+Difficulty: easy
+Question: Which song from 'DAMN.' features Rihanna?
+A: DNA.
+B: LOYALTY.
+C: HUMBLE.
+D: LOVE.
+Correct: B
+
+[Question]
+Difficulty: easy
+Question: Which track became a breakout hit single from 'DAMN.'?
+A: HUMBLE.
+B: FEEL.
+C: PRIDE.
+D: LUST.
+Correct: A
+
+[Question]
+Difficulty: easy
+Question: Which of these tracks appears on 'DAMN.'?
+A: Alright
+B: King Kunta
+C: LOVE.
+D: Swimming Pools (Drank)
+Correct: C
+
+[Question]
+Difficulty: medium
+Question: Which track title from 'DAMN.' ends with a period and is also a virtue?
+A: PRIDE.
+B: LUST.
+C: LOVE.
+D: HUMILITY.
+Correct: A
+
+[Question]
+Difficulty: medium
+Question: Which track title from 'DAMN.' is also a phrase meaning to be humble?
+A: HUMBLE.
+B: LOYALTY.
+C: FEAR.
+D: ELEMENT.
+Correct: A
+
+[Question]
+Difficulty: medium
+Question: Which track on 'DAMN.' features U2?
+A: XXX.
+B: YAH.
+C: DNA.
+D: DUCKWORTH.
+Correct: A
+
+[Question]
+Difficulty: hard
+Question: 'DAMN.' was awarded which major honor in 2018?
+A: Pulitzer Prize for Music
+B: Academy Award for Best Score
+C: Grammy for Album of the Year
+D: Brit Award for International Album
+Correct: A
+
+[Question]
+Difficulty: hard
+Question: The track 'DUCKWORTH.' is named after whose last name?
+A: Kendrick's mother
+B: Kendrick's father
+C: Kendrick's producer
+D: Kendrick's manager
+Correct: B
+
+[Question]
+Difficulty: medium
+Question: Which track on the album is titled like a genetic abbreviation?
+A: DNA.
+B: PRIDE.
+C: FEEL.
+D: BLOOD.
+Correct: A
+
+[Question]
+Difficulty: medium
+Question: Which track title from 'DAMN.' references a feeling of anxiety?
+A: FEAR.
+B: LOVE.
+C: LOYALTY.
+D: HUMBLE.
+Correct: A
+
+[Question]
+Difficulty: easy
+Question: Which word is the final punctuation mark in most track titles on 'DAMN.'?
+A: A period
+B: A comma
+C: A question mark
+D: No punctuation
+Correct: A
+
+[Question]
+Difficulty: hard
+Question: Which label released Kendrick Lamar's 'DAMN.'?
+A: Top Dawg Entertainment / Aftermath
+B: Def Jam
+C: Roc Nation
+D: XL Recordings
+Correct: A
+
+[Question]
+Difficulty: medium
+Question: Which track closes the standard edition of 'DAMN.'?
+A: DUCKWORTH.
+B: BLOOD.
+C: GOD.
+D: DNA.
+Correct: A

@@ -1,0 +1,170 @@
+[Question]
+Difficulty: easy
+Question: Which duo released the album 'Random Access Memories'?
+A: Daft Punk
+B: Justice
+C: The Chemical Brothers
+D: Disclosure
+Correct: A
+
+[Question]
+Difficulty: easy
+Question: In what year was 'Random Access Memories' released?
+A: 2009
+B: 2011
+C: 2013
+D: 2016
+Correct: C
+
+[Question]
+Difficulty: easy
+Question: Which smash hit single from the album features Pharrell Williams?
+A: Get Lucky
+B: One More Time
+C: Harder, Better, Faster, Stronger
+D: Technologic
+Correct: A
+
+[Question]
+Difficulty: medium
+Question: Which track from the album features Nile Rodgers on guitar?
+A: Give Life Back to Music
+B: Get Lucky
+C: Within
+D: Beyond
+Correct: B
+
+[Question]
+Difficulty: medium
+Question: Which collaborator appears on the track 'Instant Crush'?
+A: Julian Casablancas
+B: Tame Impala
+C: Kanye West
+D: Skrillex
+Correct: A
+
+[Question]
+Difficulty: easy
+Question: Which song title from the album starts with 'Lose'?
+A: Lose Yourself
+B: Lose Control
+C: Lose Myself to Dance
+D: Lose the Feeling
+Correct: C
+
+[Question]
+Difficulty: hard
+Question: Which legendary musician appears on the album as a collaborator?
+A: David Bowie
+B: Paul McCartney
+C: Giorgio Moroder
+D: Prince
+Correct: C
+
+[Question]
+Difficulty: hard
+Question: The track 'Giorgio by Moroder' is partly told in what format?
+A: A spoken-word interview/monologue
+B: A live crowd chant
+C: A radio DJ mix
+D: A voicemail recording
+Correct: A
+
+[Question]
+Difficulty: medium
+Question: Which track is the album's opener?
+A: Give Life Back to Music
+B: Get Lucky
+C: Instant Crush
+D: Contact
+Correct: A
+
+[Question]
+Difficulty: medium
+Question: Which track closes the standard edition of the album?
+A: Touch
+B: Doin' It Right
+C: Contact
+D: Motherboard
+Correct: C
+
+[Question]
+Difficulty: easy
+Question: 'Random Access Memories' won which major Grammy in 2014?
+A: Album of the Year
+B: Best New Artist
+C: Song of the Year
+D: Best Rock Album
+Correct: A
+
+[Question]
+Difficulty: medium
+Question: Which track from the album features Panda Bear?
+A: Doin' It Right
+B: Instant Crush
+C: Touch
+D: Beyond
+Correct: A
+
+[Question]
+Difficulty: easy
+Question: Which of these track titles appears on 'Random Access Memories'?
+A: Motherboard
+B: Aerodynamic
+C: Digital Love
+D: Da Funk
+Correct: A
+
+[Question]
+Difficulty: hard
+Question: The album is noted for emphasizing what kind of instrumentation compared to many EDM releases?
+A: Live instruments and analog warmth
+B: Only chiptune synths
+C: Purely acapella vocals
+D: No drums at all
+Correct: A
+
+[Question]
+Difficulty: medium
+Question: Which track title suggests a space/communication theme?
+A: Contact
+B: Funky Town
+C: Discovery
+D: Alive
+Correct: A
+
+[Question]
+Difficulty: medium
+Question: Which track title on the album suggests a return to basic funk?
+A: Get Lucky
+B: Give Life Back to Music
+C: Touch
+D: Beyond
+Correct: B
+
+[Question]
+Difficulty: easy
+Question: Which of these collaborators is featured on 'Get Lucky'?
+A: Pharrell Williams
+B: Rihanna
+C: Adele
+D: Lorde
+Correct: A
+
+[Question]
+Difficulty: hard
+Question: The album title 'Random Access Memories' references a type of computer memory commonly abbreviated as what?
+A: RAM
+B: ROM
+C: CPU
+D: GPU
+Correct: A
+
+[Question]
+Difficulty: medium
+Question: Which track title includes an apostrophe?
+A: Doin' It Right
+B: Motherboard
+C: Touch
+D: Within
+Correct: A

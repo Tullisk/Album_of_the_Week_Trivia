@@ -13,7 +13,7 @@
       <div class="nav-links" role="list">
         <a class="nav-link" href="index.html">This Week's Album</a>
         <a class="nav-link is-active" href="previous-albums.html" aria-current="page">Previous Albums</a>
-        <a class="nav-link" href="dev.html">Dev</a>
+        
       </div>
     </div>
   </nav>
@@ -34,7 +34,7 @@
           </summary>
           <div class="albumDetails">
             <div class="muted">Year: 2014</div>
-            <div class="muted">Notes: Add description, track highlights, or a link.</div>
+            <div class="muted">Notes: Previously featured as Album of the Week.</div>
           </div>
         </details>
 
@@ -124,7 +124,8 @@
         <option value="Random Access Memories">Random Access Memories</option>
       </select>
       <select id="sourceSelect" class="hidden" aria-hidden="true" tabindex="-1">
-        <option value="demo" selected>Demo</option>
+        <option value="txt" selected>Local TXT</option>
+        <option value="demo">Demo</option>
       </select>
 
       <div class="row">
@@ -160,7 +161,32 @@
     <section id="results" class="card hidden">
       <h2>Results</h2>
       <p>You answered <strong id="answeredText">0</strong> questions.</p>
-      <p class="score">Final score: <strong id="finalScoreText">0</strong></p>
+      <p class="muted">Points earned: <strong id="pointsEarnedText">0</strong> / <strong id="pointsPossibleText">0</strong></p>
+      <div class="resultsScore" aria-label="Final score">
+        <div class="resultsScoreText">
+          <div class="resultsScoreLabel muted">Final score</div>
+          <div class="resultsScoreValue"><strong id="finalScoreText">0</strong></div>
+        </div>
+        <div class="resultsScoreChart" aria-hidden="true">
+          <svg id="scorePie" class="scorePie" viewBox="0 0 42 42" width="96" height="96">
+            <circle class="scorePieBg" cx="21" cy="21" r="15.915" />
+            <circle id="scorePieFill" class="scorePieFill" cx="21" cy="21" r="15.915" stroke-dasharray="0 100" />
+          </svg>
+        </div>
+      </div>
+
+      <div class="resultsScore" aria-label="Average score">
+        <div class="resultsScoreText">
+          <div class="resultsScoreLabel muted">Average score</div>
+          <div class="resultsScoreValue"><strong id="avgScoreText">53%</strong></div>
+        </div>
+        <div class="resultsScoreChart" aria-hidden="true">
+          <svg class="scorePie" viewBox="0 0 42 42" width="96" height="96">
+            <circle class="scorePieBg" cx="21" cy="21" r="15.915" />
+            <circle class="scorePieFill scorePieFill-avg" cx="21" cy="21" r="15.915" stroke-dasharray="53 47" />
+          </svg>
+        </div>
+      </div>
       <button id="playAgainBtn" class="btn" type="button">Play again</button>
     </section>
   </main>

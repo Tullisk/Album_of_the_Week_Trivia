@@ -169,8 +169,7 @@ body::after{
 }
 
 .sidebar{
-  position: sticky;
-  top: 16px;
+  position: static;
   align-self:start;
   padding: 14px;
   margin-left: -32px;
@@ -185,6 +184,12 @@ body::after{
   padding-left: 26px;
   list-style: decimal;
   counter-reset: lb;
+
+  /* Keep the panel size the same, but allow the list itself to scroll */
+  max-height: 520px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-right: 8px;
 }
 .leaderboard li{
   list-style: none;
@@ -218,6 +223,50 @@ body::after{
   padding:18px;
   box-shadow: 0 10px 30px rgba(0,0,0,.35);
   margin:16px 0;
+}
+.card.flash-ok{
+  animation: flash-ok 780ms ease-out;
+}
+.card.flash-bad{
+  animation: flash-bad 780ms ease-out;
+}
+
+@keyframes flash-ok{
+  0%{
+    box-shadow: 0 10px 30px rgba(0,0,0,.35);
+    background: var(--card);
+  }
+  35%{
+    box-shadow: 0 12px 36px rgba(0,0,0,.45), 0 0 0 10px rgba(66,211,146,.55);
+    background: linear-gradient(180deg, rgba(66,211,146,.22), rgba(255,255,255,.03));
+  }
+  70%{
+    box-shadow: 0 10px 30px rgba(0,0,0,.35), 0 0 0 6px rgba(66,211,146,.28);
+    background: var(--card);
+  }
+  100%{
+    box-shadow: 0 10px 30px rgba(0,0,0,.35);
+    background: var(--card);
+  }
+}
+
+@keyframes flash-bad{
+  0%{
+    box-shadow: 0 10px 30px rgba(0,0,0,.35);
+    background: var(--card);
+  }
+  35%{
+    box-shadow: 0 12px 36px rgba(0,0,0,.45), 0 0 0 10px rgba(255,107,107,.55);
+    background: linear-gradient(180deg, rgba(255,107,107,.18), rgba(255,255,255,.03));
+  }
+  70%{
+    box-shadow: 0 10px 30px rgba(0,0,0,.35), 0 0 0 6px rgba(255,107,107,.28);
+    background: var(--card);
+  }
+  100%{
+    box-shadow: 0 10px 30px rgba(0,0,0,.35);
+    background: var(--card);
+  }
 }
 .card.card-grey{background: var(--text)}
 
@@ -257,7 +306,7 @@ h2{margin:0 0 10px 0; color: var(--accent)}
   box-shadow: 0 10px 22px rgba(0,0,0,.35);
 }
 .albumTitle{color: var(--accent); font-weight: 900; font-size: 3rem; line-height: 1.05}
-.albumArtist,.albumMeta{line-height: 1.25}
+.albumArtist,.albumMeta{line-height: 1.25; margin-top: 6px}
 
 @media (max-width: 560px){
   .albumCover{width: 210px; height: 210px}
@@ -299,6 +348,46 @@ input:focus,select:focus{border-color: var(--accent); box-shadow: 0 0 0 3px rgba
 .score{font-size:1rem}
 .question{margin:10px 0 6px 0}
 
+/* Results score + pie */
+.resultsScore{
+  display:flex;
+  align-items:center;
+  gap: 18px;
+  margin: 10px 0 14px 0;
+}
+.resultsScoreLabel{
+  font-weight: 700;
+}
+.resultsScoreValue{
+  font-size: 2.4rem;
+  line-height: 1;
+  color: var(--accent);
+}
+.resultsScoreValue #finalScoreText{
+  font-variant-numeric: tabular-nums;
+}
+.scorePie{
+  display:block;
+}
+.scorePieBg{
+  fill: none;
+  stroke: rgba(255,254,242,.18);
+  stroke-width: 6;
+}
+.scorePieFill{
+  fill: none;
+  stroke: var(--ok);
+  stroke-width: 6;
+  stroke-linecap: round;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  transition: stroke-dasharray 450ms ease;
+}
+
+.scorePieFill-avg{
+  stroke: #f6d365; /* warm yellow */
+}
+
 .choices{display:grid;grid-template-columns:1fr;gap:10px;margin-top:10px}
 .choice{
   display:flex;
@@ -311,7 +400,37 @@ input:focus,select:focus{border-color: var(--accent); box-shadow: 0 0 0 3px rgba
   cursor:pointer;
   color: #000;
 }
-.choice input{width:auto;margin:0}
+.choice{font-size: 1.15rem; line-height: 1.35}
+.choice span{font-weight: 650}
+.choice input{position:absolute; opacity:0; pointer-events:none; width:0; height:0}
+
+.choiceBadge{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,254,242,.40);
+  background: rgba(255,255,255,.06);
+  color: var(--accent);
+  font-weight: 900;
+  flex: 0 0 auto;
+}
+
+/* Selected answer styling (blue highlight) */
+.choice:has(input:checked){
+  background: var(--field);
+  border-color: rgba(255,254,242,.55);
+  box-shadow: 0 0 0 3px rgba(49,111,159,.35);
+}
+.choice:has(input:checked) span{
+  color: var(--accent);
+}
+
+@media (max-width: 560px){
+  .choice{font-size: 1.05rem}
+}
 
 .feedback{
   margin-top:12px;
@@ -326,6 +445,16 @@ input:focus,select:focus{border-color: var(--accent); box-shadow: 0 0 0 3px rgba
 table{width:100%;border-collapse:collapse;min-width:760px}
 th,td{border:1px solid var(--border);padding:10px;text-align:left}
 code{color:var(--accent)}
+
+.announcementText{
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px;
+  background: rgba(255,255,255,.03);
+  color: var(--accent);
+}
+.announcementText p{margin: 0 0 10px 0}
+.announcementText p:last-child{margin-bottom: 0}
 
 /* Previous albums page */
 .albumList{

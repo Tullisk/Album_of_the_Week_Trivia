@@ -1,0 +1,134 @@
+[Question]
+Difficulty: easy
+Question: Which band released the album 'The Natural Bridge'?
+A: Silver Jews
+B: Pavement
+C: Built to Spill
+D: Modest Mouse
+Correct: A
+
+[Question]
+Difficulty: easy
+Question: In what decade was 'The Natural Bridge' released?
+A: 1970s
+B: 1980s
+C: 1990s
+D: 2000s
+Correct: C
+
+[Question]
+Difficulty: easy
+Question: Who is the primary songwriter and vocalist of Silver Jews?
+A: David Berman
+B: Stephen Malkmus
+C: Isaac Brock
+D: Jeff Mangum
+Correct: A
+
+[Question]
+Difficulty: easy
+Question: Which of these is a track from 'The Natural Bridge'?
+A: How to Rent a Room
+B: Get Lucky
+C: Chop Suey!
+D: HUMBLE.
+Correct: A
+
+[Question]
+Difficulty: easy
+Question: 'The Natural Bridge' is generally categorized as which genre?
+A: Indie rock
+B: Classical
+C: EDM
+D: Trap
+Correct: A
+
+[Question]
+Difficulty: easy
+Question: Which word appears in the album title?
+A: Natural
+B: Artificial
+C: Digital
+D: Virtual
+Correct: A
+
+[Question]
+Difficulty: easy
+Question: The phrase 'Natural Bridge' refers to what kind of formation?
+A: A rock arch
+B: A suspension bridge
+C: A steel overpass
+D: A subway tunnel
+Correct: A
+
+[Question]
+Difficulty: easy
+Question: Which of these is a plausible Silver Jews track-title style?
+A: Black and Brown Blues
+B: Symphony No. 5
+C: Drop It Like It's Hot
+D: Poker Face
+Correct: A
+
+[Question]
+Difficulty: medium
+Question: Which track title mentions a room?
+A: How to Rent a Room
+B: Room Service
+C: Living Room
+D: Room to Breathe
+Correct: A
+
+[Question]
+Difficulty: medium
+Question: Silver Jews are often associated with which broader music scene?
+A: 1990s indie / lo-fi rock
+B: Motown soul
+C: Disco
+D: Dubstep
+Correct: A
+
+[Question]
+Difficulty: medium
+Question: Which of these is a Silver Jews-related project by David Berman?
+A: Purple Mountains
+B: The Strokes
+C: Radiohead
+D: Daft Punk
+Correct: A
+
+[Question]
+Difficulty: medium
+Question: Which instrument is commonly central in Silver Jews songs?
+A: Guitar
+B: Sitar
+C: Bagpipes
+D: Theremin
+Correct: A
+
+[Question]
+Difficulty: hard
+Question: 'The Natural Bridge' is generally considered which number studio album for Silver Jews?
+A: first
+B: second
+C: third
+D: fourth
+Correct: B
+
+[Question]
+Difficulty: hard
+Question: Silver Jews formed in which U.S. state?
+A: Virginia
+B: California
+C: Texas
+D: Florida
+Correct: A
+
+[Question]
+Difficulty: easy
+Question: Which of these is also the title of a Silver Jews album (not necessarily this one)?
+A: American Water
+B: Nevermind
+C: Abbey Road
+D: OK Computer
+Correct: A
