@@ -224,6 +224,11 @@ body::after{
   box-shadow: 0 10px 30px rgba(0,0,0,.35);
   margin:16px 0;
 }
+
+/* Gray variant (used for the Announcement panel) */
+.card.card-gray{
+  background: var(--text);
+}
 .card.flash-ok{
   animation: flash-ok 780ms ease-out;
 }
